@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "4cebd438-ea11-48d9-b25d-d196a7779c91",
+		"name": "Ekar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "threads-count",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"producerCount\": 5,\r\n  \"consumerCount\": 30\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8086/api/v1/threads-count",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"api",
+						"v1",
+						"threads-count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset counter",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"counter\": 50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8086/api/v1/reset-counter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"api",
+						"v1",
+						"reset-counter"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
