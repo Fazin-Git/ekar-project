@@ -38,7 +38,7 @@ producer-consumer-service
 - select * from counter_details;
 - select * from request_response_log;
 
-### Basic API Information
+##### Basic API Information
 | Method | Path | Usage |
 | --- | --- | --- |
 | POST | api/v1/threads-count | Configure producer and consumer threads |
@@ -53,3 +53,11 @@ http://localhost:8086/swagger-ui.html
 | ERR_SYS_001 | when counter value is exhausted |
 ```
 #### Output Screen shots
+#### Consumer high producer low
+![Consumer high producer low](https://github.com/Fazin-Git/ekar-project/blob/main/src/main/resources/images/consumer_high_producer_low.PNG)
+#### Producer high consumer low
+![Producer high consumer low](https://github.com/Fazin-Git/ekar-project/blob/main/src/main/resources/images/Producer_hig_consumer_low.PNG)
+#### Counter update
+![Counter update](https://github.com/Fazin-Git/ekar-project/blob/main/src/main/resources/images/Counter_update.PNG)
+#### Database details
+![Database details](https://github.com/Fazin-Git/ekar-project/blob/main/src/main/resources/images/Database_details_ekar_project.PNG)
