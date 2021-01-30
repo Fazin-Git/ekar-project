@@ -21,7 +21,7 @@ public class Producer implements Runnable{
             return;
         }
         int val = counter.incrementAndGet();
-        log.info("Producer incremented counter value : {}",val);
+        log.info("Producer counter: {}",val);
         Thread.sleep(1000);
     }
 }

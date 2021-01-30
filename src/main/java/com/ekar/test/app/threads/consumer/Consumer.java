@@ -21,7 +21,7 @@ public class Consumer implements Runnable{
             return;
         }
         int val = counter.decrementAndGet();
-        log.info("Consumer decremented counter value : {}",val);
+        log.info("Consumer counter: {}",val);
         Thread.sleep(1000);
     }
 }

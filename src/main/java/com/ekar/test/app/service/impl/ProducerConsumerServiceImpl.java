@@ -1,10 +1,12 @@
 package com.ekar.test.app.service.impl;
 
 import com.ekar.test.app.config.ApplicationConfig;
+import com.ekar.test.app.dto.ErrorCode;
 import com.ekar.test.app.dto.ThreadsCountRequestDto;
 import com.ekar.test.app.dto.UpdateCounterRequestDto;
 import com.ekar.test.app.entity.CounterDetails;
 import com.ekar.test.app.entity.RequestResponseLog;
+import com.ekar.test.app.exception.CounterExhaustedException;
 import com.ekar.test.app.repository.CounterDetailsRepository;
 import com.ekar.test.app.repository.RequestResponseLogRepository;
 import com.ekar.test.app.service.ProducerConsumerService;
@@ -13,6 +15,7 @@ import com.ekar.test.app.threads.consumer.Consumer;
 import com.ekar.test.app.threads.producer.Producer;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -39,7 +42,7 @@ public class ProducerConsumerServiceImpl implements ProducerConsumerService {
         saveRequestResponseInDB(countsRequest);
         //Throw Error if counter is already exhausted
         if (validateCounter()){
-            throw new RuntimeException("Counter value maximum");
+            throw new CounterExhaustedException("Counter value exhausted {}"+counter.get(), ErrorCode.COUNTER_EXHAUSTED, HttpStatus.INTERNAL_SERVER_ERROR);
         }
         //Creating fixed size thread pool from the request
         threadPool = ThreadPool.builder()

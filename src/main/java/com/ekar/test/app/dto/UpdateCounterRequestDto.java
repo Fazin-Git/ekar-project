@@ -1,15 +1,20 @@
 package com.ekar.test.app.dto;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import javax.validation.constraints.Size;
-import java.io.Serializable;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
-@Builder
-public class UpdateCounterRequestDto implements Serializable {
+@NoArgsConstructor
+public class UpdateCounterRequestDto {
 
-    @Size(min = 1,max = 99)
+    @NotNull
+    @Min(1)
+    @Max(99)
     private Integer counter;
 }

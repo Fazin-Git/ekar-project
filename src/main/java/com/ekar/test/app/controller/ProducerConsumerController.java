@@ -34,8 +34,8 @@ public class ProducerConsumerController {
     }
 
 
-    @PutMapping("/set-counter")
-    @ApiOperation(value = "Update the counter value", response = ResponseDto.class, produces = "application/json")
+    @PutMapping("/reset-counter")
+    @ApiOperation(value = "Reset the counter value", response = ResponseDto.class, produces = "application/json")
     @ApiResponses(value = { @ApiResponse(code = 400, message = "Invalid request")})
     @ResponseStatus(HttpStatus.OK)
     public ResponseDto updateCounter(@Valid @RequestBody final UpdateCounterRequestDto requestDto) {
